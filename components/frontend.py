@@ -1,4 +1,4 @@
-from components import backend
+from components.backend import new
 from termcolor import colored
 import os, time, json, sys
 from toolbox import clear
