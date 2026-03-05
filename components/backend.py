@@ -1,6 +1,6 @@
 from hashlib import sha512, sha256, md5, sha1
 from toolbox import byte, template, parse
-import os, json, time, base58
+import os, json, time, base58, sys
 from termcolor import colored
 from eth_utils import keccak
 from pathlib import Path
@@ -24,7 +24,7 @@ def hash(algo, plaintext):
 
 def new(algo):
   if algo not in config["info"]["supportedHashAlgo"]:
-    return False
+    sys.exit(1)
   os.makedirs(f"{Path(__file__).parent}/{config['directories']['output']}", exist_ok=True)
   hashes = []
   dictionaryCount, dataBreachCount = 0, 0
