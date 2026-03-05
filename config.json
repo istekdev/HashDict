@@ -17,7 +17,8 @@
         "passwords": {
           "part1": "datasets/dataBreaches/passwords_1.json",
           "part2": "datasets/dataBreaches/passwords_2.json",
-          "part3": "datasets/dataBreaches/passwords_3.json"
+          "part3": "datasets/dataBreaches/passwords_3.json",
+          "part4": "datasets/dataBreaches/passwords_4.json"
         }
       },
       "dictionary": {
