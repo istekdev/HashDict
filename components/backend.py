@@ -50,6 +50,7 @@ def new(algo):
 
   hashEntry["metadata"]["version"], hashEntry["metadata"]["timestamp"], hashEntry["metadata"]["hashFunc"] = int(config["metadata"]["version"]), round(time.time()), algo
   hashEntry["table"] = hashes
-  with open(f"{Path(__file__).parent}/{config['directories']['output']}/output_{base58.b58encode(os.urandom(24)).decode()}.json", "w") as w:
+  id = base58.b58encode(os.urandom(24)).decode()
+  with open(f"{Path(__file__).parent}/{config['directories']['output']}/output_{id}.json", "w") as w:
     json.dump(hashEntry, w, indent=4)
-
+  print(colored(f"Saved Successfully as {Path(__file__).parent}/{config['directories']['output']}/output_{id}.json", "green", attrs=["bold"]))
