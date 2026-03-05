@@ -1,0 +1,32 @@
+{
+  "metadata": {
+    "version": 1,
+    "developer": "ISTEK",
+    "github": "https://github.com/istekdev/HashDict",
+    "created": 1772695188
+  },
+  "directories": {
+    "templates": {
+      "hashEntry": "formats/hashEntry.json",
+      "hashComp": "formats/hash.json"
+    },
+    "datasets": {
+      "dataBreaches": {
+        "crackedHashes": "datasets/dataBreaches/crackedHashes.json",
+        "passwords": "datasets/dataBreaches/passwords.json",
+        "usernames": "datasets/dataBreaches/usernames.json"
+      },
+      "dictionary": {
+        "english": "datasets/dictionary/en.json",
+        "romanian": "datasets/dictionary/ro.json",
+        "portuguese": "datasets/dictionary/pt-br.json",
+        "spanish": "datasets/dictionary/es.json",
+        "chinese": "datasets/dictionary/zh.json",
+        "italian": "datasets/dictionary/it.json",
+        "french": "datasets/dictionary/fr.json"
+      }
+    },
+    "info": {
+      "supportedHashAlgo": ["SHA-256", "Keccak-256", "SHA-1", "MD5", "SHA-512"]
+    }
+  }
