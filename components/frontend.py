@@ -27,7 +27,7 @@ def menu():
     algo = input(colored(">>> ", "white", attrs=["bold"]))
     if config["info"]["hashMonitor"] == False:
       print(colored("Hashing Rainbow Table...", "yellow", attrs=["bold"]))
-    new(algo)
+    new(algo.upper())
     time.sleep(3)
     clear()
     menu()
