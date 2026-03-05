@@ -9,21 +9,8 @@ def clear():
 
 def parse(name):
   if name == "dictionary":
-    with open(f"{Path(__file__).parent}/{config['directories']['datasets']['dictionary']['english']}", "r", encoding="utf-8") as r:
-      en = json.load(r)
-    with open(f"{Path(__file__).parent}/{config['directories']['datasets']['dictionary']['romanian']}", "r", encoding="utf-8") as r:
-      ro = json.load(r)
-    with open(f"{Path(__file__).parent}/{config['directories']['datasets']['dictionary']['portuguese']}", "r", encoding="utf-8") as r:
-      pt = json.load(r)
-    with open(f"{Path(__file__).parent}/{config['directories']['datasets']['dictionary']['spanish']}", "r", encoding="utf-8") as r:
-      es = json.load(r)
-    with open(f"{Path(__file__).parent}/{config['directories']['datasets']['dictionary']['chinese']}", "r", encoding="utf-8") as r:
-      zh = json.load(r)
-    with open(f"{Path(__file__).parent}/{config['directories']['datasets']['dictionary']['italian']}", "r", encoding="utf-8") as r:
-      it = json.load(r)
-    with open(f"{Path(__file__).parent}/{config['directories']['datasets']['dictionary']['french']}", "r", encoding="utf-8") as r:
-      fr = json.load(r)
-    return en + ro + pt + es + zh + it + fr
+    with open(f"{Path(__file__).parent}/{config['directories']['datasets']['dictionary']}", "r", encoding="utf-8") as r:
+      return json.load(r)
   elif name == "dataBreach":
     with open(f"{Path(__file__).parent}/{config['directories']['datasets']['dataBreaches']['crackedHashes']}", "r", encoding="utf-8") as r:
       ch = json.load(r)
