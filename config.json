@@ -29,9 +29,9 @@
         "chinese": "datasets/dictionary/zh.json",
         "italian": "datasets/dictionary/it.json",
         "french": "datasets/dictionary/fr.json"
-      },
-      "output": "output"
-    }
+      }
+    },
+    "output": "output"
   },
   "info": {
     "supportedHashAlgo": ["SHA-256", "Keccak-256", "SHA-1", "MD5", "SHA-512"],
