@@ -42,6 +42,8 @@ def new(algo):
 
     hashComp["input"], hashComp["output"] = text, output
     entry["table"].append(hashComp)
+    with open(f"{Path(__file__).parent.parent}/{config['directories']['output']}/output_{id}.json", "w") as w:
+      json.dump(entry, w, indent=4)
     if config["info"]["hashMonitor"]:
       print(colored(f"Dictionary Hash #{str(dictionaryCount)} - {output}", "yellow", attrs=["bold"]))
   for text in dataBreach:
@@ -50,6 +52,8 @@ def new(algo):
 
     hashComp["input"], hashComp["output"] = text, output
     entry["table"].append(hashComp)
+    with open(f"{Path(__file__).parent.parent}/{config['directories']['output']}/output_{id}.json", "w") as w:
+      json.dump(entry, w, indent=4)
     if config["info"]["hashMonitor"]:
       print(colored(f"Data Breach Hash #{str(dictionaryCount)} - {output}", "yellow", attrs=["bold"]))
   
