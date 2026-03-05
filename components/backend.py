@@ -24,6 +24,8 @@ def hash(algo, plaintext):
 
 def new(algo):
   if algo not in config["info"]["supportedHashAlgo"]:
+    print(colored("Error - Invalid Hashing Function. Exiting in 3 Seconds...", "red", attrs=["bold"]))
+    time.sleep(3)
     sys.exit(1)
   os.makedirs(f"{Path(__file__).parent}/{config['directories']['output']}", exist_ok=True)
   hashes = []
