@@ -1,3 +1,9 @@
+import json, copy
+
+def template(path):
+  with open(path, "r") as r:
+    return copy.deepcopy(json.load(r))
+
 def byte(inp):
   hexadecimal = None
   try:
