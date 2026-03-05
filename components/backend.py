@@ -5,9 +5,9 @@ from termcolor import colored
 from eth_utils import keccak
 from pathlib import Path
 
-with open(f"{Path(__file__).parent}/config.json", "r") as r:
+with open(f"{Path(__file__).parent.parent}/config.json", "r") as r:
   config = json.load(r)
-hashEntry, hashComp = template(f"{Path(__file__).parent}/{config['directories']['templates']['hashEntry']}"), template(f"{Path(__file__).parent}/{config['directories']['templates']['hashComp']}")
+hashEntry, hashComp = template(f"{Path(__file__).parent.parent}/{config['directories']['templates']['hashEntry']}"), template(f"{Path(__file__).parent.parent}/{config['directories']['templates']['hashComp']}")
 dictionary, dataBreach = parse("dictionary"), parse("dataBreach")
 
 def hash(algo, plaintext):
@@ -25,7 +25,7 @@ def new(algo):
     print(colored("Error - Invalid Hashing Function. Exiting in 3 Seconds...", "red", attrs=["bold"]))
     time.sleep(3)
     sys.exit(1)
-  os.makedirs(f"{Path(__file__).parent}/{config['directories']['output']}", exist_ok=True)
+  os.makedirs(f"{Path(__file__).parent.parent}/{config['directories']['output']}", exist_ok=True)
   hashes = []
   dictionaryCount, dataBreachCount = 0, 0
 
@@ -49,6 +49,6 @@ def new(algo):
   hashEntry["metadata"]["version"], hashEntry["metadata"]["timestamp"], hashEntry["metadata"]["hashFunc"] = int(config["metadata"]["version"]), round(time.time()), algo
   hashEntry["table"] = hashes
   id = base58.b58encode(os.urandom(24)).decode()
-  with open(f"{Path(__file__).parent}/{config['directories']['output']}/output_{id}.json", "w") as w:
+  with open(f"{Path(__file__).parent.parent}/{config['directories']['output']}/output_{id}.json", "w") as w:
     json.dump(hashEntry, w, indent=4)
-  print(colored(f"Saved Successfully as {Path(__file__).parent}/{config['directories']['output']}/output_{id}.json", "green", attrs=["bold"]))
+  print(colored(f"Saved Successfully as {Path(__file__).parent.parent}/{config['directories']['output']}/output_{id}.json", "green", attrs=["bold"]))
