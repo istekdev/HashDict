@@ -33,6 +33,7 @@
       "output": "output"
     },
     "info": {
+      "supportedHashAlgo": ["SHA-256", "Keccak-256", "SHA-1", "MD5", "SHA-512"],
       "hashMonitor": true
     }
   }
