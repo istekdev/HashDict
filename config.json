@@ -13,8 +13,12 @@
     "datasets": {
       "dataBreaches": {
         "crackedHashes": "datasets/dataBreaches/crackedHashes.json",
-        "passwords": "datasets/dataBreaches/passwords.json",
-        "usernames": "datasets/dataBreaches/usernames.json"
+        "usernames": "datasets/dataBreaches/usernames.json",
+        "passwords": {
+          "part1": "datasets/dataBreaches/passwords_1.json",
+          "part2": "datasets/dataBreaches/passwords_2.json",
+          "part3": "datasets/dataBreaches/passwords_3.json"
+        }
       },
       "dictionary": {
         "english": "datasets/dictionary/en.json",
