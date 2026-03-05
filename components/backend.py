@@ -41,7 +41,7 @@ def new(algo):
     output = hash(algo, text)
 
     hashComp["input"], hashComp["output"] = text, output
-    entry["table"].append(hashComp)
+    entry["table"].append(hashComp.copy())
     with open(f"{Path(__file__).parent.parent}/{config['directories']['output']}/output_{id}.json", "w") as w:
       json.dump(entry, w, indent=4)
     if config["info"]["hashMonitor"]:
@@ -51,7 +51,7 @@ def new(algo):
     output = hash(algo, text)
 
     hashComp["input"], hashComp["output"] = text, output
-    entry["table"].append(hashComp)
+    entry["table"].append(hashComp.copy())
     with open(f"{Path(__file__).parent.parent}/{config['directories']['output']}/output_{id}.json", "w") as w:
       json.dump(entry, w, indent=4)
     if config["info"]["hashMonitor"]:
