@@ -21,15 +21,7 @@
           "part4": "datasets/dataBreaches/password_4.json"
         }
       },
-      "dictionary": {
-        "english": "datasets/dictionary/en.json",
-        "romanian": "datasets/dictionary/ro.json",
-        "portuguese": "datasets/dictionary/pt-br.json",
-        "spanish": "datasets/dictionary/es.json",
-        "chinese": "datasets/dictionary/zh.json",
-        "italian": "datasets/dictionary/it.json",
-        "french": "datasets/dictionary/fr.json"
-      }
+      "dictionary": "datasets/dictionary/dictionary.json"
     },
     "output": "output"
   },
