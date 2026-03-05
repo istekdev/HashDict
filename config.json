@@ -7,8 +7,8 @@
   },
   "directories": {
     "templates": {
-      "hashEntry": "formats/hashEntry.json",
-      "hashComp": "formats/hash.json"
+      "hashEntry": "templates/hashEntry.json",
+      "hashComp": "templates/hash.json"
     },
     "datasets": {
       "dataBreaches": {
