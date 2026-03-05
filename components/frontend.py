@@ -4,7 +4,7 @@ import os, time, json, sys
 from toolbox import clear
 from pathlib import Path
 
-with open(f"{Path(__file__).parent}/config.json", "r") as r:
+with open(f"{Path(__file__).parent.parent}/config.json", "r") as r:
   config = json.load(r)
 
 def menu():
