@@ -1,5 +1,8 @@
 from pathlib import Path
-import json, copy
+import json, copy, os
+
+def clear():
+  os.system('cls' if os.name == 'nt' else 'clear')
 
 def parse(name):
   if name == "dictionary":
