@@ -26,15 +26,22 @@ def new(algo):
     time.sleep(3)
     sys.exit(1)
   os.makedirs(f"{Path(__file__).parent.parent}/{config['directories']['output']}", exist_ok=True)
-  hashes = []
   dictionaryCount, dataBreachCount = 0, 0
+
+  hashEntry["metadata"]["version"], hashEntry["metadata"]["timestamp"], hashEntry["metadata"]["hashFunc"] = int(config["metadata"]["version"]), round(time.time()), algo
+  id = base58.b58encode(os.urandom(24)).decode()
+  with open(f"{Path(__file__).parent.parent}/{config['directories']['output']}/output_{id}.json", "w") as w:
+    json.dump(hashEntry, w, indent=4)
+
+  with open(f"{Path(__file__).parent.parent}/{config['directories']['output']}/output_{id}.json", "r") as r:
+    entry = json.load(r)
 
   for text in dictionary:
     dictionaryCount += 1
     output = hash(algo, text)
 
     hashComp["input"], hashComp["output"] = text, output
-    hashes.append(hashComp)
+    entry["table"].append(hashComp)
     if config["info"]["hashMonitor"]:
       print(colored(f"Dictionary Hash #{str(dictionaryCount)} - {output}", "yellow", attrs=["bold"]))
   for text in dataBreach:
@@ -42,13 +49,8 @@ def new(algo):
     output = hash(algo, text)
 
     hashComp["input"], hashComp["output"] = text, output
-    hashes.append(hashComp)
+    entry["table"].append(hashComp)
     if config["info"]["hashMonitor"]:
       print(colored(f"Data Breach Hash #{str(dictionaryCount)} - {output}", "yellow", attrs=["bold"]))
-
-  hashEntry["metadata"]["version"], hashEntry["metadata"]["timestamp"], hashEntry["metadata"]["hashFunc"] = int(config["metadata"]["version"]), round(time.time()), algo
-  hashEntry["table"] = hashes
-  id = base58.b58encode(os.urandom(24)).decode()
-  with open(f"{Path(__file__).parent.parent}/{config['directories']['output']}/output_{id}.json", "w") as w:
-    json.dump(hashEntry, w, indent=4)
+  
   print(colored(f"Saved Successfully as {Path(__file__).parent.parent}/{config['directories']['output']}/output_{id}.json", "green", attrs=["bold"]))
