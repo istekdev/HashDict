@@ -15,10 +15,10 @@
         "crackedHashes": "datasets/dataBreaches/crackedHashes.json",
         "usernames": "datasets/dataBreaches/usernames.json",
         "passwords": {
-          "part1": "datasets/dataBreaches/passwords_1.json",
-          "part2": "datasets/dataBreaches/passwords_2.json",
-          "part3": "datasets/dataBreaches/passwords_3.json",
-          "part4": "datasets/dataBreaches/passwords_4.json"
+          "part1": "datasets/dataBreaches/password_1.json",
+          "part2": "datasets/dataBreaches/password_2.json",
+          "part3": "datasets/dataBreaches/password_3.json",
+          "part4": "datasets/dataBreaches/password_4.json"
         }
       },
       "dictionary": {
