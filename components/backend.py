@@ -12,15 +12,13 @@ dictionary, dataBreach = parse("dictionary"), parse("dataBreach")
 
 def hash(algo, plaintext):
   if algo == "SHA-1":
-    returm sha1(byte(plaintext)).hexdigest()
+    return sha1(byte(plaintext)).hexdigest()
   elif algo == "Keccak-256":
     return keccak(byte(plaintext)).hex()
   elif algo == "SHA-256":
     return sha256(byte(plaintext)).hexdigest()
   elif algo == "MD5":
     return md5(byte(plaintext)).hexdigest()
-  elif algo == "SHA-1":
-    return sha1(byte(plaintext)).hexdigest()
 
 def new(algo):
   if algo not in config["info"]["supportedHashAlgo"]:
