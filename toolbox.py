@@ -9,33 +9,33 @@ def clear():
 
 def parse(name):
   if name == "dictionary":
-    with open(f"{Path(__file__).parent}/{config['directories']['datasets']['dictionary']['english']}", "r") as r:
+    with open(f"{Path(__file__).parent}/{config['directories']['datasets']['dictionary']['english']}", "r", encoding="utf-8") as r:
       en = json.load(r)
-    with open(f"{Path(__file__).parent}/{config['directories']['datasets']['dictionary']['romanian']}", "r") as r:
+    with open(f"{Path(__file__).parent}/{config['directories']['datasets']['dictionary']['romanian']}", "r", encoding="utf-8") as r:
       ro = json.load(r)
-    with open(f"{Path(__file__).parent}/{config['directories']['datasets']['dictionary']['portuguese']}", "r") as r:
+    with open(f"{Path(__file__).parent}/{config['directories']['datasets']['dictionary']['portuguese']}", "r", encoding="utf-8") as r:
       pt = json.load(r)
-    with open(f"{Path(__file__).parent}/{config['directories']['datasets']['dictionary']['spanish']}", "r") as r:
+    with open(f"{Path(__file__).parent}/{config['directories']['datasets']['dictionary']['spanish']}", "r", encoding="utf-8") as r:
       es = json.load(r)
-    with open(f"{Path(__file__).parent}/{config['directories']['datasets']['dictionary']['chinese']}", "r") as r:
+    with open(f"{Path(__file__).parent}/{config['directories']['datasets']['dictionary']['chinese']}", "r", encoding="utf-8") as r:
       zh = json.load(r)
-    with open(f"{Path(__file__).parent}/{config['directories']['datasets']['dictionary']['italian']}", "r") as r:
+    with open(f"{Path(__file__).parent}/{config['directories']['datasets']['dictionary']['italian']}", "r", encoding="utf-8") as r:
       it = json.load(r)
-    with open(f"{Path(__file__).parent}/{config['directories']['datasets']['dictionary']['french']}", "r") as r:
+    with open(f"{Path(__file__).parent}/{config['directories']['datasets']['dictionary']['french']}", "r", encoding="utf-8") as r:
       fr = json.load(r)
     return en + ro + pt + es + zh + it + fr
   elif name == "dataBreach":
-    with open(f"{Path(__file__).parent}/{config['directories']['datasets']['dataBreaches']['crackedHashes']}", "r") as r:
+    with open(f"{Path(__file__).parent}/{config['directories']['datasets']['dataBreaches']['crackedHashes']}", "r", encoding="utf-8") as r:
       ch = json.load(r)
-    with open(f"{Path(__file__).parent}/{config['directories']['datasets']['dataBreaches']['usernames']}", "r") as r:
+    with open(f"{Path(__file__).parent}/{config['directories']['datasets']['dataBreaches']['usernames']}", "r", encoding="utf-8") as r:
       us = json.load(r)
-    with open(f"{Path(__file__).parent}/{config['directories']['datasets']['dataBreaches']['passwords']['part1']}", "r") as r:
+    with open(f"{Path(__file__).parent}/{config['directories']['datasets']['dataBreaches']['passwords']['part1']}", "r", encoding="utf-8") as r:
       p1 = json.load(r)
-    with open(f"{Path(__file__).parent}/{config['directories']['datasets']['dataBreaches']['passwords']['part2']}", "r") as r:
+    with open(f"{Path(__file__).parent}/{config['directories']['datasets']['dataBreaches']['passwords']['part2']}", "r", encoding="utf-8") as r:
       p2 = json.load(r)
-    with open(f"{Path(__file__).parent}/{config['directories']['datasets']['dataBreaches']['passwords']['part3']}", "r") as r:
+    with open(f"{Path(__file__).parent}/{config['directories']['datasets']['dataBreaches']['passwords']['part3']}", "r", encoding="utf-8") as r:
       p3 = json.load(r)
-    with open(f"{Path(__file__).parent}/{config['directories']['datasets']['dataBreaches']['passwords']['part4']}", "r") as r:
+    with open(f"{Path(__file__).parent}/{config['directories']['datasets']['dataBreaches']['passwords']['part4']}", "r", encoding="utf-8") as r:
       p4 = json.load(r)
     return ch + us + p1 + p2 + p3 + p4
   else:
