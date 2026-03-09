@@ -35,15 +35,19 @@ def new(algo):
 
   with open(f"{Path(__file__).parent.parent}/{config['directories']['output']}/output_{id}.json", "r") as r:
     entry = json.load(r)
+  chunks = []
 
   for text in dictionary:
     dictionaryCount += 1
     output = hash(algo, text)
 
     hashComp["input"], hashComp["output"] = text, output
-    entry["table"].append(hashComp.copy())
-    with open(f"{Path(__file__).parent.parent}/{config['directories']['output']}/output_{id}.json", "w") as w:
-      json.dump(entry, w, indent=4)
+    chunk.append(hashComp.copy())
+    if len(chunk) >= 10000:
+      entry["table"].append(chunk)
+      with open(f"{Path(__file__).parent.parent}/{config['directories']['output']}/output_{id}.json", "w") as w:
+        json.dump(entry, w, indent=4)
+      chunks.clear()
     if config["info"]["hashMonitor"]:
       print(colored(f"Dictionary Hash #{str(dictionaryCount)} - {output}", "yellow", attrs=["bold"]))
   for text in dataBreach:
@@ -51,9 +55,12 @@ def new(algo):
     output = hash(algo, text)
 
     hashComp["input"], hashComp["output"] = text, output
-    entry["table"].append(hashComp.copy())
-    with open(f"{Path(__file__).parent.parent}/{config['directories']['output']}/output_{id}.json", "w") as w:
-      json.dump(entry, w, indent=4)
+    chunk.append(hashComp.copy())
+    if len(chunk) >= 10000:
+      entry["table"].append(chunk)
+      with open(f"{Path(__file__).parent.parent}/{config['directories']['output']}/output_{id}.json", "w") as w:
+        json.dump(entry, w, indent=4)
+      chunks.clear()
     if config["info"]["hashMonitor"]:
       print(colored(f"Data Breach Hash #{str(dictionaryCount)} - {output}", "yellow", attrs=["bold"]))
   
